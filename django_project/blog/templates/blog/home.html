@@ -1,0 +1,77 @@
+{% extends "blog/base.html" %} {% load static %} {% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'blog/home.css' %}" />
+
+<!-- {% for post in posts %}
+<article class="media content-section">
+  <div class="media-body">
+    <div class="article-metadata">
+      <a class="mr-2" href="#">{{ post.author }}</a>
+      <small class="text-muted">{{ post.date_posted }}</small>
+    </div>
+    <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+    <p class="article-content">{{ post.content }}</p>
+  </div>
+</article>
+{% endfor %}  -->
+{% for post in posts %}
+<!-- Card -->
+<div class="card promoting-card mb-5">
+  <!-- Card content -->
+  <div class="card-body d-flex flex-row">
+    <!-- Avatar -->
+    <img
+      src="https://mdbootstrap.com/img/Photos/Avatars/avatar-8.jpg"
+      class="rounded-circle mr-3"
+      height="50px"
+      width="50px"
+      alt="avatar"
+    />
+
+    <!-- Content -->
+    <div>
+      <!-- Title -->
+      <h4 class="card-title font-weight-bold">
+        <a class="article-title" href="#">{{ post.title }}</a>
+      </h4>
+      <!-- Subtitle -->
+      <p class="card-text">
+        Submitted by <a href="#">{{ post.author }}</a>
+        <p>
+            <i class="far fa-clock pr-2"></i><em>{{ post.date_posted }}</em>
+        </p>
+        <hr width="100%">
+        {{ post.content }}
+      </p>
+    </div>
+  </div>
+  <!-- Card content -->
+  <div class="card-body">
+    <div class="collapse-content">
+      <!-- Text -->
+     
+      
+      <!-- Button -->
+      <!-- <a
+        class="btn btn-flat red-text p-1 my-1 mr-0 mml-1 collapsed"
+        data-toggle="collapse"
+        href="#collapseContent"
+        aria-expanded="false"
+        aria-controls="collapseContent"
+      ></a>
+      <i
+        class="fas fa-share-alt text-muted float-right p-1 my-1"
+        data-toggle="tooltip"
+        data-placement="top"
+        title="Share this post"
+      ></i>
+      <i
+        class="fas fa-heart text-muted float-right p-1 my-1 mr-3"
+        data-toggle="tooltip"
+        data-placement="top"
+        title="I like it"
+      ></i> -->
+    </div>
+  </div>
+</div>
+<!-- Card -->
+{% endfor %} {% endblock content %}
